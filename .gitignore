@@ -4,9 +4,11 @@
 *.log
 *.pyc
 *.swp
-.buildlog/
 .history
 .env
+.buildlog/
+.idea/
+.vscode/
 
 
 

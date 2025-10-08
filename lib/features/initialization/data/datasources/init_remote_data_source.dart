@@ -13,9 +13,7 @@ class InitRemoteDataSource {
     final response = await client.get(Uri.parse('$baseUrl/api/health'));
 
     if (response.statusCode == 200) {
-      // return response.body;
       final Map<String, dynamic> mappedData = jsonDecode(response.body);
-      print(response.body.runtimeType);
       return mappedData['health'];
     } else {
       throw Exception('Failed to load data');

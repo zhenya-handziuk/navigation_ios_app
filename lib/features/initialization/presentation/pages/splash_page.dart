@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/init_bloc.dart';
-import '../../../road/presentation/pages/home_page.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -12,9 +11,9 @@ class SplashPage extends StatelessWidget {
       listener: (content, state) {
         print('Listener state: $state');
         if (state is InitLoaded) {
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (_) => HomePage()),
-          );
+          // Navigator.of(context).pushReplacement(
+          //   MaterialPageRoute(builder: (_) => HomePage()),
+          // );
         } else if (state is InitError) {
           WidgetsBinding.instance.addPostFrameCallback((_) {
             ScaffoldMessenger.of(context).showSnackBar(

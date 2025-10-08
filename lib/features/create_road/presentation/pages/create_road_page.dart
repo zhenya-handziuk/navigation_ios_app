@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../../../../shared/widgets/app_scaffold.dart';
+
 class CreateRoadPage extends StatelessWidget {
   const CreateRoadPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Create Road')),
+    return AppScaffold(
+      title: 'Create Road',
       body: Center(
         child: Text('This is the Create Road Page'),
       ),
