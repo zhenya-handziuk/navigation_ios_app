@@ -9,7 +9,6 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<InitBloc, InitState>(
       listener: (content, state) {
-        print('Listener state: $state');
         if (state is InitLoaded) {
           // Navigator.of(context).pushReplacement(
           //   MaterialPageRoute(builder: (_) => HomePage()),
@@ -23,7 +22,6 @@ class SplashPage extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        print('Builder state: $state');
         if (state is InitLoading) {
           return const Center(child: CircularProgressIndicator());
         }

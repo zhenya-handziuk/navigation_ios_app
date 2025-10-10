@@ -9,7 +9,7 @@ class InitRepositoryImpl implements InitRepository {
   @override
   Future<bool> checkInitialization() async {
     try {
-      final result = await remoteDataSource.fetchData();
+      final result = await remoteDataSource.checkStatus();
       return result;
     } catch (e) {
       print('Error in InitRepositoryImpl: $e');

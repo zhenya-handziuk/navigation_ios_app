@@ -1,4 +1,3 @@
-import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 
 import './data/datasources/init_remote_data_source.dart';
@@ -29,7 +28,4 @@ Future<void> initInitializationFeatureDI() async {
   sl.registerFactory<InitBloc>(
     () => InitBloc(sl()),
   );
-
-  // External
-  sl.registerLazySingleton<http.Client>(() => http.Client());
 }

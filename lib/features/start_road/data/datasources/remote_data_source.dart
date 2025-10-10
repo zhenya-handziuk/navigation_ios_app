@@ -6,7 +6,7 @@ class InitRemoteDataSource {
 
   InitRemoteDataSource(this.apiClient);
 
-  Future<bool> checkStatus() async {
+  Future<bool> fetchData() async {
     final response = await apiClient.get('api/health');
 
     final Map<String, dynamic> mappedData = jsonDecode(response.body);
