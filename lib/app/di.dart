@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import '../core/network/api_client.dart';
 import '../features/initialization/di.dart';
 import '../features/start_road/di.dart';
+import '../features/auth/di.dart';
 
 final sl = GetIt.instance;
 
@@ -15,5 +16,5 @@ Future<void> initDependencies() async {
   // Data sources
   await initInitializationFeatureDI();
   await initStartRoadFeatureDI();
-
+  await initAuthFeatureDI();
 }

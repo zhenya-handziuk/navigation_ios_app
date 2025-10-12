@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../app/router.dart';
-import '../../../../shared/widgets/app_scaffold.dart';
+import '../../../../core/layout/app_scaffold.dart';
 // import 'create_road_page.dart';
 // import 'download_road_page.dart';
 // import 'start_road_page.dart';

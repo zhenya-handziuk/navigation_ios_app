@@ -5,7 +5,7 @@ class InitConnectionUseCase {
 
   InitConnectionUseCase(this.repository);
 
-  Future<void> call() async {
-    await repository.initConnection();
+  Future<String> call() async {
+    return await repository.initConnection();
   }
 }

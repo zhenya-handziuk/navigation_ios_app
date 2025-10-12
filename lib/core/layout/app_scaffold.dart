@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
-import 'navbar.dart';
-import 'footer.dart';
+import '../../shared/widgets/navbar.dart';
+import '../../shared/widgets/footer.dart';
+import '../../features/auth/presentation/bloc/auth_bloc.dart';
 
 class AppScaffold extends StatelessWidget {
   final String title;
@@ -15,8 +17,9 @@ class AppScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AuthBloc authBloc = GetIt.I<AuthBloc>();
     return Scaffold(
-      appBar: Navbar(title: title),
+      appBar: Navbar(title: title, onLogout: authBloc.logout),
       body: body,
       bottomNavigationBar: Footer(),
     );

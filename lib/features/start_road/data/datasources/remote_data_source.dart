@@ -12,4 +12,10 @@ class InitRemoteDataSource {
     final Map<String, dynamic> mappedData = jsonDecode(response.body);
     return mappedData['health'];
   }
+
+  Future<String> initRoadConnection(Map<String, dynamic> body) async {
+    final response = await apiClient.post('api/trails/start', body);
+
+    return response['trailId'];
+  }
 }

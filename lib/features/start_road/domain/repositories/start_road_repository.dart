@@ -1,3 +1,3 @@
 abstract class StartRoadRepository {
-  Future<void> initConnection();
+  Future<String> initConnection();
 }

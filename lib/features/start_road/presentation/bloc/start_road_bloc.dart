@@ -10,9 +10,12 @@ class StartRoadBloc extends Cubit<StartRoadState> {
   StartRoadBloc(this.initConnectionUseCase) : super(StartRoadInitial());
 
   Future<void> startProcess() async {
+    String trailId = '';
     emit(StartRoadLoading(countdown));
 
-    unawaited(initConnectionUseCase.call());
+    initConnectionUseCase.call().then((onValue) => {
+      trailId = onValue
+    });
 
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       countdown--;
@@ -21,7 +24,7 @@ class StartRoadBloc extends Cubit<StartRoadState> {
         emit(StartRoadLoading(countdown));
       } else {
         timer.cancel();
-        emit(StartRoadLoaded());
+        emit(StartRoadLoaded(trailId));
       }
     });
 
@@ -39,7 +42,10 @@ class StartRoadLoading extends StartRoadState {
   final int countdown;
   StartRoadLoading(this.countdown);
 }
-class StartRoadLoaded extends StartRoadState {}
+class StartRoadLoaded extends StartRoadState {
+  final String trailId;
+  StartRoadLoaded(this.trailId);
+}
 class StartRoadError extends StartRoadState {
   final String message;
   StartRoadError(this.message);

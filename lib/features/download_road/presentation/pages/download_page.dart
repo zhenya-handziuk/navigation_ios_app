@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../shared/widgets/app_scaffold.dart';
+import '../../../../core/layout/app_scaffold.dart';
 
 class DownloadRoadPage extends StatelessWidget {
   const DownloadRoadPage({super.key});
